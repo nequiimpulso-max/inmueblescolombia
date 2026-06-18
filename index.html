@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vive Colombia · Conjuntos, Casas, Condominios, Bodegas y Centros Comerciales</title>
+  <!-- Google Fonts para una tipografía moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (gratuito) para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* reset y base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf9f6;
+      color: #1e1e2a;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* header */
+    .header {
+      background: linear-gradient(135deg, #0b2b3b 0%, #1a4a5f 100%);
+      color: #fff;
+      padding: 24px 0 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .header-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo h1 {
+      font-weight: 800;
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo h1 i {
+      color: #f9c74f;
+      font-size: 2rem;
+    }
+    .logo span {
+      font-weight: 400;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      display: block;
+      margin-top: 4px;
+    }
+    .cta-header {
+      background: #f9c74f;
+      color: #0b2b3b;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(249, 199, 79, 0.3);
+    }
+    .cta-header:hover {
+      background: #f8d97a;
+      transform: scale(1.02);
+    }
+    .cta-header i {
+      font-size: 1.1rem;
+    }
+
+    /* hero */
+    .hero {
+      padding: 60px 0 50px;
+      background: linear-gradient(120deg, #ffffff 0%, #f3f6fa 100%);
+      border-bottom: 1px solid #e9edf2;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-text h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .hero-text h2 i {
+      color: #d64933;
+    }
+    .hero-text .highlight {
+      background: linear-gradient(120deg, #f9c74f 0%, #f9c74f 40%, transparent 80%);
+      padding: 0 8px 0 0;
+      display: inline-block;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #3d4a5a;
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+    .hero-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      margin-bottom: 28px;
+    }
+    .hero-badge span {
+      background: #eef2f7;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #1a3b4b;
+    }
+    .hero-badge i {
+      margin-right: 6px;
+      color: #d64933;
+    }
+    .btn-primary {
+      background: #d64933;
+      color: #fff;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 20px rgba(214, 73, 51, 0.25);
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #bf3f2b;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(214, 73, 51, 0.35);
+    }
+    .hero-image {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="%23dce3eb" /><circle cx="100" cy="100" r="40" fill="%23b0c4d9" /><circle cx="300" cy="80" r="30" fill="%239bb3c9" /><rect x="60" y="160" width="80" height="60" fill="%238aa3b9" /><rect x="260" y="150" width="90" height="70" fill="%237a93a9" /><rect x="150" y="200" width="100" height="40" fill="%236b8399" /><rect x="20" y="230" width="360" height="30" fill="%235b7389" /></svg>') no-repeat center/cover;
+      min-height: 240px;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      background-color: #dce3eb;
+    }
+
+    /* sección categorías */
+    .categories {
+      padding: 64px 0 60px;
+      background: #fff;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .section-sub {
+      color: #4a5a6e;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+    }
+    .category-card {
+      background: #f7f9fc;
+      padding: 28px 16px 24px;
+      border-radius: 28px;
+      text-align: center;
+      transition: 0.2s ease;
+      border: 1px solid #eef1f5;
+    }
+    .category-card:hover {
+      transform: translateY(-6px);
+      background: #fff;
+      border-color: #d64933;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+    }
+    .category-card i {
+      font-size: 2.6rem;
+      color: #d64933;
+      background: #fbe9e5;
+      padding: 18px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .category-card h3 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+    .category-card p {
+      color: #4d6074;
+      font-size: 0.95rem;
+    }
+
+    /* descubre colombia */
+    .discover {
+      background: #f2f5f9;
+      padding: 64px 0;
+    }
+    .discover-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .discover-img {
+      background: #bcc9d6;
+      border-radius: 32px;
+      min-height: 200px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250"><rect width="400" height="250" fill="%23a3b8cb" /><path d="M80 180 L180 80 L280 120 L340 200 L60 200 Z" fill="%2389a0b5" opacity="0.6" /><circle cx="200" cy="140" r="40" fill="%236f889e" /><rect x="120" y="190" width="160" height="30" fill="%235a7389" /></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+    .discover h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .discover p {
+      color: #2d4052;
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+    }
+    .list-check {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .list-check li {
+      margin-bottom: 10px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .list-check i {
+      color: #d64933;
+      font-size: 1.3rem;
+      width: 28px;
+    }
+
+    /* testimonios / ads */
+    .testimonials {
+      background: #fff;
+      padding: 60px 0;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 32px 0 20px;
+    }
+    .testi-card {
+      background: #f7fafd;
+      border-radius: 24px;
+      padding: 28px 22px;
+      border: 1px solid #e7ecf2;
+    }
+    .testi-card i {
+      color: #f9c74f;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .testi-card p {
+      font-weight: 400;
+      color: #1c2c3b;
+      margin: 8px 0 12px;
+    }
+    .testi-card h4 {
+      font-weight: 700;
+      color: #0b2b3b;
+    }
+    .testi-card span {
+      font-size: 0.85rem;
+      color: #5f7387;
+    }
+
+    /* footer */
+    .footer {
+      background: #0b1f29;
+      color: #cedbe6;
+      padding: 40px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer h4 {
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .footer a {
+      color: #b6ccdb;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 0;
+    }
+    .footer a:hover {
+      color: #f9c74f;
+    }
+    .footer .copy {
+      border-top: 1px solid #2c4657;
+      padding-top: 24px;
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .footer i {
+      margin-right: 6px;
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .discover-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-text h2 {
+        font-size: 2.4rem;
+      }
+      .testimonial-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+        align-items: start;
+        gap: 12px;
+      }
+      .cta-header {
+        width: 100%;
+        justify-content: center;
+      }
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <h1><i class="fas fa-map-pin"></i> Conoce Colombia</h1>
+        <span>Conjuntos · Casas · Condominios · Bodegas · Centros Comerciales</span>
+      </div>
+      <button class="cta-header" id="ctaHeaderBtn"><i class="fas fa-arrow-right"></i> ¡Descubre más!</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h2>
+          <i class="fas fa-house-chimney"></i> <span class="highlight">Vive Colombia</span> en cada espacio
+        </h2>
+        <p>Conjuntos residenciales, casas, condominios, bodegas y centros comerciales: la diversidad que hace único a nuestro país.</p>
+        <div class="hero-badge">
+          <span><i class="fas fa-building"></i> Conjuntos</span>
+          <span><i class="fas fa-home"></i> Casas</span>
+          <span><i class="fas fa-warehouse"></i> Bodegas</span>
+          <span><i class="fas fa-store"></i> Centros comerciales</span>
+        </div>
+        <button class="btn-primary" id="heroBtn"><i class="fas fa-compass"></i> Explorar ahora</button>
+      </div>
+      <div class="hero-image"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Encuentra tu espacio ideal</h2>
+      <p class="section-sub">Desde conjuntos cerrados hasta centros comerciales, te mostramos lo mejor de Colombia.</p>
+      <div class="category-grid">
+        <div class="category-card">
+          <i class="fas fa-people-roof"></i>
+          <h3>Conjuntos</h3>
+          <p>Vivienda con áreas comunes, seguridad y calidad de vida.</p>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-house"></i>
+          <h3>Casas</h3>
+          <p>Diseños únicos, desde lo tradicional hasta lo contemporáneo.</p>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-building"></i>
+          <h3>Condominios</h3>
+          <p>Exclusividad, servicios y ubicación privilegiada.</p>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-warehouse"></i>
+          <h3>Bodegas</h3>
+          <p>Espacios logísticos y comerciales para tu negocio.</p>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-store"></i>
+          <h3>Centros comerciales</h3>
+          <p>Moda, gastronomía y entretenimiento en un solo lugar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCOVER COLOMBIA -->
+  <section class="discover">
+    <div class="container discover-grid">
+      <div class="discover-img"></div>
+      <div>
+        <h2><i class="fas fa-flag" style="color: #d64933; margin-right: 8px;"></i>Conoce Colombia en toda su diversidad</h2>
+        <p>Desde las ciudades vibrantes hasta los paisajes más acogedores, cada rincón ofrece una experiencia única.</p>
+        <ul class="list-check">
+          <li><i class="fas fa-check-circle"></i> Conjuntos residenciales con zonas verdes</li>
+          <li><i class="fas fa-check-circle"></i> Casas con arquitectura colonial y moderna</li>
+          <li><i class="fas fa-check-circle"></i> Condominios de lujo con vista a la montaña</li>
+          <li><i class="fas fa-check-circle"></i> Bodegas para emprendedores y empresas</li>
+          <li><i class="fas fa-check-circle"></i> Centros comerciales con las mejores marcas</li>
+        </ul>
+        <button class="btn-primary" id="discoverBtn"><i class="fas fa-magnifying-glass"></i> Quiero conocer más</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / REFERENCIAS -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen sobre vivir en Colombia</h2>
+      <p class="section-sub">Experiencias reales de personas que han encontrado su lugar.</p>
+      <div class="testimonial-grid">
+        <div class="testi-card">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <p>“El conjunto donde vivo tiene todo: piscina, gimnasio y zonas verdes. Me encanta la tranquilidad.”</p>
+          <h4>María F. <span>· Bogotá</span></h4>
+        </div>
+        <div class="testi-card">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <p>“Mi bodega en el centro comercial me ha dado visibilidad y clientes de toda la ciudad.”</p>
+          <h4>Carlos R. <span>· Medellín</span></h4>
+        </div>
+        <div class="testi-card">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <p>“Compré mi casa en un condominio con vista a las montañas, es un sueño hecho realidad.”</p>
+          <h4>Laura G. <span>· Cali</span></h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4><i class="fas fa-map-pin"></i> Conoce Colombia</h4>
+          <p style="margin-bottom: 12px; max-width: 280px;">Tu guía para encontrar conjuntos, casas, condominios, bodegas y centros comerciales en todo el país.</p>
+          <p><i class="fas fa-envelope"></i> info@conocecolombia.co</p>
+          <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+        </div>
+        <div>
+          <h4>Explora</h4>
+          <a href="#"><i class="fas fa-chevron-right"></i> Conjuntos</a><br>
+          <a href="#"><i class="fas fa-chevron-right"></i> Casas</a><br>
+          <a href="#"><i class="fas fa-chevron-right"></i> Condominios</a><br>
+          <a href="#"><i class="fas fa-chevron-right"></i> Bodegas</a><br>
+          <a href="#"><i class="fas fa-chevron-right"></i> Centros comerciales</a>
+        </div>
+        <div>
+          <h4>Recursos</h4>
+          <a href="#"><i class="fas fa-chevron-right"></i> Blog</a><br>
+          <a href="#"><i class="fas fa-chevron-right"></i> Guía de ciudades</a><br>
+          <a href="#"><i class="fas fa-chevron-right"></i> Contacto</a><br>
+          <a href="#"><i class="fas fa-chevron-right"></i> Políticas</a>
+        </div>
+      </div>
+      <div class="copy">
+        <p>&copy; 2026 Conoce Colombia · Campaña Google Ads · Todos los derechos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript (interacciones sencillas) -->
+  <script>
+    (function() {
+      // elementos
+      const ctaHeader = document.getElementById('ctaHeaderBtn');
+      const heroBtn = document.getElementById('heroBtn');
+      const discoverBtn = document.getElementById('discoverBtn');
+
+      // función de alerta con mensaje contextual
+      function showMessage(accion) {
+        alert(`🚀 ¡Gracias por tu interés! (${accion})\n\nEn Conoce Colombia te ayudamos a encontrar el espacio perfecto: conjuntos, casas, condominios, bodegas y centros comerciales. ¡Pronto un asesor se comunicará contigo!`);
+      }
+
+      // eventos
+      ctaHeader.addEventListener('click', function(e) {
+        e.preventDefault();
+        showMessage('Header CTA');
+      });
+
+      heroBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showMessage('Botón Hero');
+      });
+
+      discoverBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showMessage('Botón Descubrir');
+      });
+
+      // agregamos también efecto a las tarjetas de categoría (solo feedback)
+      const cards = document.querySelectorAll('.category-card');
+      cards.forEach(card => {
+        card.addEventListener('click', function() {
+          const titulo = this.querySelector('h3')?.innerText || 'categoría';
+          alert(`🔍 Explorando "${titulo}"\n\nEncuentra la mejor opción en conjuntos, casas, condominios, bodegas y centros comerciales.`);
+        });
+      });
+
+      // y a los testimonios (opcional)
+      const testiCards = document.querySelectorAll('.testi-card');
+      testiCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function() {
+          const nombre = this.querySelector('h4')?.innerText || 'Usuario';
+          alert(`💬 "${nombre}" recomienda vivir en Colombia. ¡Conoce más sobre conjuntos, casas, condominios, bodegas y centros comerciales!`);
+        });
+      });
+
+      console.log('✅ Página informativa "Conoce Colombia" lista para campaña Google Ads.');
+    })();
+  </script>
+
+</body>
+</html>
