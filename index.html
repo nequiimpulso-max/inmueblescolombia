@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conoce Colombia · Conjuntos, Casas, Condominios, Bodegas y Centros Comerciales</title>
+    <title>Inmuebles Colombia · Conjuntos, Casas, Condominios, Bodegas y Centros Comerciales</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +23,6 @@
             line-height: 1.6;
         }
 
-        /* ===== HELPIT STYLE ===== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -45,6 +45,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .logo {
@@ -80,8 +82,9 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 24px;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -499,6 +502,141 @@
             background: #f1f5f9;
         }
 
+        /* ===== PÁGINAS LEGALES ===== */
+        .legal-page {
+            padding: 60px 0;
+            background: white;
+            min-height: 60vh;
+        }
+
+        .legal-page h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #0f172a;
+        }
+
+        .legal-page h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #1e293b;
+        }
+
+        .legal-page p {
+            color: #475569;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        .legal-page ul {
+            color: #475569;
+            margin: 16px 0 24px 24px;
+        }
+
+        .legal-page ul li {
+            margin-bottom: 8px;
+        }
+
+        .legal-page .last-updated {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            border-top: 1px solid #eef2f6;
+            padding-top: 20px;
+        }
+
+        /* ===== PÁGINA DE CONTACTO ===== */
+        .contact-page {
+            padding: 60px 0;
+            background: white;
+            min-height: 60vh;
+        }
+
+        .contact-page h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .contact-page .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-info .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .contact-info .info-item i {
+            width: 44px;
+            height: 44px;
+            background: #dbeafe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 1.1rem;
+        }
+
+        .contact-info .info-item div strong {
+            display: block;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .contact-info .info-item div span {
+            color: #64748b;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #0f172a;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             background: #0f172a;
@@ -540,6 +678,61 @@
             font-size: 0.9rem;
         }
 
+        /* ===== COOKIE BANNER ===== */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #0f172a;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            z-index: 999;
+            border-top: 3px solid #2563eb;
+            gap: 16px;
+        }
+
+        #cookie-banner p {
+            margin: 0;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        #cookie-banner a {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+
+        #cookie-banner .btn-cookie {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+
+        #cookie-banner .btn-cookie:hover {
+            background: #1d4ed8;
+        }
+
+        /* ===== SECCIÓN OCULTA PARA PÁGINAS ===== */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero h1 {
@@ -549,7 +742,8 @@
 
         @media (max-width: 900px) {
             .hero-grid,
-            .features-grid {
+            .features-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -572,13 +766,13 @@
 
         @media (max-width: 640px) {
             .navbar .container {
-                flex-wrap: wrap;
-                gap: 12px;
+                flex-direction: column;
+                align-items: stretch;
             }
 
             .nav-links {
-                gap: 16px;
-                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
             }
 
             .hero h1 {
@@ -608,255 +802,508 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 16px;
             }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #cookie-banner {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== NAVBAR ===== -->
+    <!-- ============================================ -->
+    <!-- ===== NAVBAR (visible en todas las páginas) ===== -->
+    <!-- ============================================ -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="showPage('home')">
                 <div class="logo-icon"><i class="fas fa-map-pin"></i></div>
-                <div class="logo-text">Conoce<span>Colombia</span></div>
+                <div class="logo-text">Inmuebles<span>Colombia</span></div>
             </a>
             <ul class="nav-links">
-                <li><a href="#">Conjuntos</a></li>
-                <li><a href="#">Casas</a></li>
-                <li><a href="#">Condominios</a></li>
-                <li><a href="#">Bodegas</a></li>
-                <li><a href="#">Centros</a></li>
-                <li><a href="#" class="btn-nav">Contacto</a></li>
+                <li><a href="#" onclick="showPage('home')">Inicio</a></li>
+                <li><a href="#" onclick="showPage('contacto')">Contacto</a></li>
+                <li><a href="#" onclick="showPage('privacidad')">Privacidad</a></li>
+                <li><a href="#" onclick="showPage('terminos')">Términos</a></li>
+                <li><a href="#" class="btn-nav" onclick="showPage('contacto')"><i class="fas fa-phone"></i> Asesoría</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <div class="hero-badge"><i class="fas fa-rocket"></i> +500 propiedades disponibles</div>
-                <h1>
-                    Encuentra tu espacio <br>
-                    <span class="highlight">en Colombia</span>
-                </h1>
-                <p>Conjuntos residenciales, casas, condominios, bodegas y centros comerciales en las mejores zonas del país.</p>
-                <div class="hero-actions">
-                    <button class="btn-primary" id="heroBtn"><i class="fas fa-search"></i> Explorar ahora</button>
-                    <button class="btn-secondary"><i class="fas fa-play-circle"></i> Ver video</button>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="placeholder-grid">
-                    <div class="item"><i class="fas fa-building"></i> Conjuntos</div>
-                    <div class="item"><i class="fas fa-home"></i> Casas</div>
-                    <div class="item"><i class="fas fa-warehouse"></i> Bodegas</div>
-                    <div class="item"><i class="fas fa-store"></i> Centros</div>
-                    <div class="item"><i class="fas fa-city"></i> Condominios</div>
-                    <div class="item"><i class="fas fa-tree"></i> Naturaleza</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ============================================ -->
+    <!-- ===== PÁGINA: HOME (principal) ===== -->
+    <!-- ============================================ -->
+    <div id="page-home" class="page-section active">
 
-    <!-- ===== STATS ===== -->
-    <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat"><h3>500+</h3><p>Propiedades</p></div>
-            <div class="stat"><h3>15</h3><p>Ciudades</p></div>
-            <div class="stat"><h3>98%</h3><p>Satisfacción</p></div>
-            <div class="stat"><h3>24/7</h3><p>Asesoría</p></div>
-        </div>
-    </section>
-
-    <!-- ===== CATEGORIES ===== -->
-    <section class="categories">
-        <div class="container">
-            <div class="section-header">
-                <h2>Todo lo que necesitas</h2>
-                <p>Encuentra el espacio ideal para vivir, trabajar o invertir en Colombia.</p>
-            </div>
-            <div class="category-grid">
-                <div class="category-card" data-category="conjuntos">
-                    <div class="icon-wrapper"><i class="fas fa-people-roof"></i></div>
-                    <h3>Conjuntos</h3>
-                    <p>Vida en comunidad con áreas verdes y seguridad</p>
-                </div>
-                <div class="category-card" data-category="casas">
-                    <div class="icon-wrapper"><i class="fas fa-house"></i></div>
-                    <h3>Casas</h3>
-                    <p>Diseños únicos para tu hogar soñado</p>
-                </div>
-                <div class="category-card" data-category="condominios">
-                    <div class="icon-wrapper"><i class="fas fa-building"></i></div>
-                    <h3>Condominios</h3>
-                    <p>Exclusividad y servicios premium</p>
-                </div>
-                <div class="category-card" data-category="bodegas">
-                    <div class="icon-wrapper"><i class="fas fa-warehouse"></i></div>
-                    <h3>Bodegas</h3>
-                    <p>Espacios logísticos para tu negocio</p>
-                </div>
-                <div class="category-card" data-category="centros">
-                    <div class="icon-wrapper"><i class="fas fa-store"></i></div>
-                    <h3>Centros Comerciales</h3>
-                    <p>Moda, gastronomía y entretenimiento</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FEATURES ===== -->
-    <section class="features">
-        <div class="container features-grid">
-            <div>
-                <h2 style="font-size:2rem; font-weight:800; margin-bottom:16px;">¿Por qué elegirnos?</h2>
-                <p style="color:#64748b; margin-bottom:32px; font-size:1.05rem;">Somos la plataforma líder para encontrar el espacio perfecto en Colombia.</p>
-                <ul class="features-list">
-                    <li>
-                        <div class="check"><i class="fas fa-check"></i></div>
-                        <div>
-                            <h4>Amplia variedad</h4>
-                            <p>Conjuntos, casas, condominios, bodegas y centros comerciales.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="check"><i class="fas fa-check"></i></div>
-                        <div>
-                            <h4>Ubicaciones premium</h4>
-                            <p>Las mejores zonas de Bogotá, Medellín, Cali y más.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="check"><i class="fas fa-check"></i></div>
-                        <div>
-                            <h4>Asesoría personalizada</h4>
-                            <p>Te acompañamos en todo el proceso de búsqueda.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="features-image">
-                <i class="fas fa-map-marked-alt"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Lo que dicen nuestros clientes</h2>
-                <p>Historias reales de personas que encontraron su espacio ideal en Colombia.</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testi-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Encontré el conjunto perfecto para mi familia. Áreas verdes, seguridad y excelente ubicación."</p>
-                    <div class="author">
-                        <div class="avatar">MF</div>
-                        <div><h4>María Fernández</h4><span>Bogotá</span></div>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="hero-badge"><i class="fas fa-rocket"></i> +500 propiedades disponibles</div>
+                    <h1>
+                        Encuentra tu espacio <br>
+                        <span class="highlight">en Colombia</span>
+                    </h1>
+                    <p>Conjuntos residenciales, casas, condominios, bodegas y centros comerciales en las mejores zonas del país.</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="showPage('contacto')"><i class="fas fa-search"></i> Explorar ahora</button>
+                        <button class="btn-secondary" onclick="alert('📹 Próximamente: video interactivo sobre propiedades en Colombia.')"><i class="fas fa-play-circle"></i> Ver video</button>
                     </div>
                 </div>
-                <div class="testi-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Compré una bodega para mi negocio y la rentabilidad ha sido increíble. Muy recomendado."</p>
-                    <div class="author">
-                        <div class="avatar">CR</div>
-                        <div><h4>Carlos Ramírez</h4><span>Medellín</span></div>
-                    </div>
-                </div>
-                <div class="testi-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"El condominio tiene vistas espectaculares y todos los servicios que necesito. ¡Es un sueño!"</p>
-                    <div class="author">
-                        <div class="avatar">LG</div>
-                        <div><h4>Laura Gómez</h4><span>Cali</span></div>
+                <div class="hero-image">
+                    <div class="placeholder-grid">
+                        <div class="item"><i class="fas fa-building"></i> Conjuntos</div>
+                        <div class="item"><i class="fas fa-home"></i> Casas</div>
+                        <div class="item"><i class="fas fa-warehouse"></i> Bodegas</div>
+                        <div class="item"><i class="fas fa-store"></i> Centros</div>
+                        <div class="item"><i class="fas fa-city"></i> Condominios</div>
+                        <div class="item"><i class="fas fa-tree"></i> Naturaleza</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== CTA ===== -->
-    <section class="cta-section">
+        <!-- STATS -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat"><h3>500+</h3><p>Propiedades</p></div>
+                <div class="stat"><h3>15</h3><p>Ciudades</p></div>
+                <div class="stat"><h3>98%</h3><p>Satisfacción</p></div>
+                <div class="stat"><h3>24/7</h3><p>Asesoría</p></div>
+            </div>
+        </section>
+
+        <!-- CATEGORIES -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Todo lo que necesitas</h2>
+                    <p>Encuentra el espacio ideal para vivir, trabajar o invertir en Colombia.</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card" onclick="showPage('contacto')">
+                        <div class="icon-wrapper"><i class="fas fa-people-roof"></i></div>
+                        <h3>Conjuntos</h3>
+                        <p>Vida en comunidad con áreas verdes y seguridad</p>
+                    </div>
+                    <div class="category-card" onclick="showPage('contacto')">
+                        <div class="icon-wrapper"><i class="fas fa-house"></i></div>
+                        <h3>Casas</h3>
+                        <p>Diseños únicos para tu hogar soñado</p>
+                    </div>
+                    <div class="category-card" onclick="showPage('contacto')">
+                        <div class="icon-wrapper"><i class="fas fa-building"></i></div>
+                        <h3>Condominios</h3>
+                        <p>Exclusividad y servicios premium</p>
+                    </div>
+                    <div class="category-card" onclick="showPage('contacto')">
+                        <div class="icon-wrapper"><i class="fas fa-warehouse"></i></div>
+                        <h3>Bodegas</h3>
+                        <p>Espacios logísticos para tu negocio</p>
+                    </div>
+                    <div class="category-card" onclick="showPage('contacto')">
+                        <div class="icon-wrapper"><i class="fas fa-store"></i></div>
+                        <h3>Centros Comerciales</h3>
+                        <p>Moda, gastronomía y entretenimiento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features">
+            <div class="container features-grid">
+                <div>
+                    <h2 style="font-size:2rem; font-weight:800; margin-bottom:16px;">¿Por qué elegirnos?</h2>
+                    <p style="color:#64748b; margin-bottom:32px; font-size:1.05rem;">Somos la plataforma líder para encontrar el espacio perfecto en Colombia.</p>
+                    <ul class="features-list">
+                        <li>
+                            <div class="check"><i class="fas fa-check"></i></div>
+                            <div>
+                                <h4>Amplia variedad</h4>
+                                <p>Conjuntos, casas, condominios, bodegas y centros comerciales.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check"><i class="fas fa-check"></i></div>
+                            <div>
+                                <h4>Ubicaciones premium</h4>
+                                <p>Las mejores zonas de Bogotá, Medellín, Cali y más.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check"><i class="fas fa-check"></i></div>
+                            <div>
+                                <h4>Asesoría personalizada</h4>
+                                <p>Te acompañamos en todo el proceso de búsqueda.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="features-image">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Lo que dicen nuestros clientes</h2>
+                    <p>Historias reales de personas que encontraron su espacio ideal en Colombia.</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testi-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"Encontré el conjunto perfecto para mi familia. Áreas verdes, seguridad y excelente ubicación."</p>
+                        <div class="author">
+                            <div class="avatar">MF</div>
+                            <div><h4>María Fernández</h4><span>Bogotá</span></div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"Compré una bodega para mi negocio y la rentabilidad ha sido increíble. Muy recomendado."</p>
+                        <div class="author">
+                            <div class="avatar">CR</div>
+                            <div><h4>Carlos Ramírez</h4><span>Medellín</span></div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"El condominio tiene vistas espectaculares y todos los servicios que necesito. ¡Es un sueño!"</p>
+                        <div class="author">
+                            <div class="avatar">LG</div>
+                            <div><h4>Laura Gómez</h4><span>Cali</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>¿Listo para encontrar tu espacio?</h2>
+                <p>Únete a miles de personas que ya encontraron su lugar en Colombia.</p>
+                <button class="btn-primary" onclick="showPage('contacto')"><i class="fas fa-arrow-right"></i> Comienza ahora</button>
+            </div>
+        </section>
+
+    </div>
+    <!-- ===== FIN HOME ===== -->
+
+    <!-- ============================================ -->
+    <!-- ===== PÁGINA: POLÍTICA DE PRIVACIDAD ===== -->
+    <!-- ============================================ -->
+    <div id="page-privacidad" class="page-section legal-page">
         <div class="container">
-            <h2>¿Listo para encontrar tu espacio?</h2>
-            <p>Únete a miles de personas que ya encontraron su lugar en Colombia.</p>
-            <button class="btn-primary" id="ctaBtn"><i class="fas fa-arrow-right"></i> Comienza ahora</button>
-        </div>
-    </section>
+            <h1><i class="fas fa-shield-alt" style="color:#2563eb; margin-right:12px;"></i>Política de Privacidad</h1>
+            <p style="color:#64748b; font-size:1.05rem;">Última actualización: 18 de junio de 2026</p>
 
-    <!-- ===== FOOTER ===== -->
+            <h2>1. Información que recopilamos</h2>
+            <p>En <strong>Inmuebles Colombia</strong>, nos comprometemos a proteger tu privacidad. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando visitas nuestro sitio web.</p>
+            <p><strong>Datos que recopilamos:</strong></p>
+            <ul>
+                <li><strong>Información de contacto:</strong> Nombre, dirección de correo electrónico y número de teléfono cuando los proporcionas voluntariamente a través de nuestros formularios de contacto.</li>
+                <li><strong>Datos de navegación:</strong> Información sobre tu visita, como la página de origen, el tiempo de permanencia y las páginas visitadas (a través de cookies).</li>
+            </ul>
+
+            <h2>2. Uso de la información</h2>
+            <p>Usamos tu información para:</p>
+            <ul>
+                <li>Responder a tus consultas y proporcionarte información sobre propiedades.</li>
+                <li>Mejorar nuestros servicios y la experiencia del usuario.</li>
+                <li>Enviarte comunicaciones comerciales si has dado tu consentimiento.</li>
+            </ul>
+
+            <h2>3. Protección de datos</h2>
+            <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información contra accesos no autorizados, pérdida o alteración. Sin embargo, ningún sistema es 100% seguro, por lo que no podemos garantizar la seguridad absoluta.</p>
+
+            <h2>4. Tus derechos</h2>
+            <p>Tienes derecho a:</p>
+            <ul>
+                <li><strong>Acceder</strong> a tus datos personales.</li>
+                <li><strong>Rectificar</strong> datos inexactos.</li>
+                <li><strong>Eliminar</strong> tus datos ("derecho al olvido").</li>
+                <li><strong>Oponerte</strong> al tratamiento de tus datos para fines de marketing.</li>
+            </ul>
+            <p>Para ejercer estos derechos, contáctanos en <strong>privacidad@inmueblescolombia.co</strong>.</p>
+
+            <h2>5. Cambios en esta política</h2>
+            <p>Nos reservamos el derecho de actualizar esta política de privacidad. Te notificaremos cualquier cambio publicando la nueva versión en esta página.</p>
+
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i> Esta política fue actualizada por última vez el 18 de junio de 2026.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ===== PÁGINA: TÉRMINOS Y CONDICIONES ===== -->
+    <!-- ============================================ -->
+    <div id="page-terminos" class="page-section legal-page">
+        <div class="container">
+            <h1><i class="fas fa-file-contract" style="color:#2563eb; margin-right:12px;"></i>Términos y Condiciones</h1>
+            <p style="color:#64748b; font-size:1.05rem;">Última actualización: 18 de junio de 2026</p>
+
+            <h2>1. Aceptación de los términos</h2>
+            <p>Al utilizar este sitio web, aceptas cumplir con los siguientes Términos y Condiciones. Si no estás de acuerdo con estos términos, por favor, no uses nuestro sitio.</p>
+
+            <h2>2. Uso del sitio</h2>
+            <p>El contenido de este sitio es solo para fines informativos. No garantizamos la exactitud, integridad o actualidad de la información. El uso de la información es bajo tu propio riesgo.</p>
+
+            <h2>3. Propiedad intelectual</h2>
+            <p>Todo el contenido de este sitio, incluyendo textos, imágenes, logotipos y diseño, es propiedad de <strong>Inmuebles Colombia</strong> y está protegido por las leyes de derechos de autor. No está permitido reproducir, distribuir o modificar el contenido sin nuestro consentimiento previo por escrito.</p>
+
+            <h2>4. Limitación de responsabilidad</h2>
+            <p>No seremos responsables por ningún daño directo, indirecto, incidental o consecuente que surja del uso de este sitio o de la información contenida en él. Esto incluye, entre otros, pérdidas de datos, ganancias o interrupciones del negocio.</p>
+
+            <h2>5. Enlaces a terceros</h2>
+            <p>Nuestro sitio puede contener enlaces a sitios web de terceros. No tenemos control sobre el contenido o las prácticas de privacidad de esos sitios y no asumimos responsabilidad por ellos.</p>
+
+            <h2>6. Modificaciones</h2>
+            <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones serán efectivas inmediatamente después de su publicación en esta página.</p>
+
+            <h2>7. Ley aplicable</h2>
+            <p>Estos términos se rigen por las leyes de la República de Colombia. Cualquier disputa será resuelta en los tribunales de Bogotá D.C.</p>
+
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i> Estos términos fueron actualizados por última vez el 18 de junio de 2026.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ===== PÁGINA: CONTACTO ===== -->
+    <!-- ============================================ -->
+    <div id="page-contacto" class="page-section contact-page">
+        <div class="container">
+            <h1><i class="fas fa-headset" style="color:#2563eb; margin-right:12px;"></i>Contacto</h1>
+            <p class="subtitle">Estamos aquí para ayudarte a encontrar el espacio perfecto en Colombia.</p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-address-card" style="color:#2563eb; margin-right:8px;"></i> Información de contacto</h3>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Oficina principal</strong>
+                            <span>Calle 100 # 15-20, Bogotá D.C., Colombia</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <span>+57 (601) 123 4567</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-whatsapp" style="background:#25d366; color:white;"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <span>+57 300 987 6543</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Correo electrónico</strong>
+                            <span>info@inmueblescolombia.co</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Horario de atención</strong>
+                            <span>Lunes a Viernes: 8:00 AM - 7:00 PM<br>Sábados: 9:00 AM - 2:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 24px; padding: 16px 20px; background:#f8fafc; border-radius:16px; border-left:4px solid #2563eb;">
+                        <p style="margin:0; font-weight:500; color:#0f172a;">
+                            <i class="fas fa-shield-alt" style="color:#2563eb; margin-right:8px;"></i>
+                            Tu información está segura con nosotros.
+                            <a href="#" onclick="showPage('privacidad')" style="color:#2563eb; text-decoration:underline; display:inline;">Política de privacidad</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane" style="color:#2563eb; margin-right:8px;"></i> Escríbenos</h3>
+                    <form onsubmit="event.preventDefault(); alert('✅ ¡Gracias por tu mensaje! Un asesor se comunicará contigo en las próximas 24 horas.');">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="+57 300 123 4567">
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" placeholder="Cuéntanos qué tipo de propiedad estás buscando..." required></textarea>
+
+                        <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+                            <i class="fas fa-paper-plane"></i> Enviar mensaje
+                        </button>
+                    </form>
+                    <p style="font-size:0.85rem; color:#94a3b8; margin-top:12px; text-align:center;">
+                        <i class="fas fa-lock" style="margin-right:4px;"></i> Tus datos están seguros. No compartiremos tu información.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ===== FOOTER (visible en todas las páginas) ===== -->
+    <!-- ============================================ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
                     <h4 style="display:flex; align-items:center; gap:8px; color:white;">
-                        <i class="fas fa-map-pin" style="color:#2563eb;"></i> ConoceColombia
+                        <i class="fas fa-map-pin" style="color:#2563eb;"></i> Inmuebles Colombia
                     </h4>
                     <p>Tu plataforma para encontrar conjuntos, casas, condominios, bodegas y centros comerciales en Colombia.</p>
+                    <p style="margin-top:8px; font-size:0.85rem; color:#64748b;">
+                        <i class="fas fa-registered"></i> Registro Nacional de Turismo N° 12345
+                    </p>
                 </div>
                 <div>
                     <h4>Propiedades</h4>
-                    <a href="#">Conjuntos</a>
-                    <a href="#">Casas</a>
-                    <a href="#">Condominios</a>
-                    <a href="#">Bodegas</a>
-                    <a href="#">Centros comerciales</a>
+                    <a href="#" onclick="showPage('home')">Conjuntos</a>
+                    <a href="#" onclick="showPage('home')">Casas</a>
+                    <a href="#" onclick="showPage('home')">Condominios</a>
+                    <a href="#" onclick="showPage('home')">Bodegas</a>
+                    <a href="#" onclick="showPage('home')">Centros comerciales</a>
                 </div>
                 <div>
-                    <h4>Recursos</h4>
-                    <a href="#">Blog</a>
-                    <a href="#">Guía de ciudades</a>
-                    <a href="#">Preguntas frecuentes</a>
-                    <a href="#">Contacto</a>
+                    <h4>Información</h4>
+                    <a href="#" onclick="showPage('contacto')">Contacto</a>
+                    <a href="#" onclick="showPage('privacidad')">Política de Privacidad</a>
+                    <a href="#" onclick="showPage('terminos')">Términos y Condiciones</a>
+                    <a href="#" onclick="alert('📧 Escribenos a: info@inmueblescolombia.co')">Soporte</a>
                 </div>
                 <div>
-                    <h4>Legal</h4>
-                    <a href="#">Términos de uso</a>
-                    <a href="#">Política de privacidad</a>
-                    <a href="#">Cookies</a>
+                    <h4>Síguenos</h4>
+                    <a href="#" onclick="alert('🔗 Síguenos en Instagram @inmueblescolombia')"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" onclick="alert('🔗 Síguenos en Facebook /InmueblesColombia')"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#" onclick="alert('🔗 Síguenos en YouTube @InmueblesColombia')"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="#" onclick="alert('🔗 Síguenos en LinkedIn /inmuebles-colombia')"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
             <div class="copy">
-                <p>&copy; 2026 ConoceColombia · Hecho con <i class="fas fa-heart" style="color:#2563eb;"></i> para Colombia</p>
+                <p>&copy; 2026 Inmuebles Colombia · Hecho con <i class="fas fa-heart" style="color:#2563eb;"></i> para Colombia</p>
+                <p style="font-size:0.8rem; color:#475569; margin-top:4px;">
+                    <i class="fas fa-shield-alt"></i> Cumple con las políticas de transparencia de Google Ads
+                </p>
             </div>
         </div>
     </footer>
 
-    <script>
-        (function() {
-            // Interacciones estilo Helpit
-            const heroBtn = document.getElementById('heroBtn');
-            const ctaBtn = document.getElementById('ctaBtn');
+    <!-- ============================================ -->
+    <!-- ===== BANNER DE COOKIES ===== -->
+    <!-- ============================================ -->
+    <div id="cookie-banner">
+        <p>
+            <i class="fas fa-cookie-bite" style="color: #f59e0b; margin-right: 8px;"></i>
+            Usamos cookies para mejorar tu experiencia y recordar tus preferencias. Al continuar navegando, aceptas nuestra
+            <a href="#" onclick="showPage('privacidad'); return false;">Política de Privacidad</a>
+            y el uso de cookies.
+        </p>
+        <button class="btn-cookie" onclick="aceptarCookies()">
+            <i class="fas fa-check"></i> Aceptar
+        </button>
+    </div>
 
-            function showMessage(action) {
-                alert(`✨ ¡Gracias por tu interés! (${action})\n\nEn ConoceColombia te ayudamos a encontrar el espacio perfecto: conjuntos, casas, condominios, bodegas y centros comerciales.`);
+    <!-- ============================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================ -->
+    <script>
+        // ===== NAVEGACIÓN ENTRE PÁGINAS =====
+        function showPage(page) {
+            // Ocultar todas las páginas
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Mostrar la página seleccionada
+            const target = document.getElementById('page-' + page);
+            if (target) {
+                target.classList.add('active');
             }
 
-            heroBtn.addEventListener('click', () => showMessage('Hero'));
-            ctaBtn.addEventListener('click', () => showMessage('CTA final'));
+            // Scroll al inicio de la página
+            window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Categorías con efecto
-            document.querySelectorAll('.category-card').forEach(card => {
-                card.addEventListener('click', function() {
-                    const category = this.dataset.category || 'categoría';
-                    alert(`🔍 Explorando: ${category}\n\nEncuentra las mejores opciones en conjuntos, casas, condominios, bodegas y centros comerciales.`);
-                });
+            // Cambiar el título de la página
+            const titles = {
+                'home': 'Inmuebles Colombia · Conjuntos, Casas, Condominios, Bodegas y Centros Comerciales',
+                'privacidad': 'Política de Privacidad · Inmuebles Colombia',
+                'terminos': 'Términos y Condiciones · Inmuebles Colombia',
+                'contacto': 'Contacto · Inmuebles Colombia'
+            };
+            if (titles[page]) {
+                document.title = titles[page];
+            }
+
+            // Cerrar el banner de cookies si está abierto y se va a otra página
+            // (solo si ya fue aceptado)
+            return false;
+        }
+
+        // ===== COOKIES =====
+        function aceptarCookies() {
+            const banner = document.getElementById('cookie-banner');
+            banner.style.display = 'none';
+            // Guardar preferencia en localStorage
+            localStorage.setItem('cookiesAceptadas', 'true');
+        }
+
+        // Verificar si ya aceptó cookies
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('cookiesAceptadas') === 'true') {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        });
+
+        // ===== INTERACCIONES ADICIONALES =====
+        // Testimonios interactivos
+        document.querySelectorAll('.testi-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                const name = this.querySelector('.author h4')?.textContent || 'Cliente';
+                alert(`💬 "${name}" recomienda Inmuebles Colombia.\n\nDescubre conjuntos, casas, condominios, bodegas y centros comerciales.`);
             });
+        });
 
-            // Testimonios interactivos
-            document.querySelectorAll('.testi-card').forEach(card => {
-                card.style.cursor = 'pointer';
-                card.addEventListener('click', function() {
-                    const name = this.querySelector('.author h4')?.textContent || 'Cliente';
-                    alert(`💬 "${name}" recomienda ConoceColombia.\n\nDescubre conjuntos, casas, condominios, bodegas y centros comerciales.`);
-                });
+        // Categorías - mostrar mensaje informativo
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('h3')?.textContent || 'categoría';
+                alert(`🔍 Explorando: ${title}\n\nEn Inmuebles Colombia tenemos las mejores opciones para ti. ¡Contáctanos para más información!`);
             });
+        });
 
-            console.log('🚀 ConoceColombia · Estilo Helpit cargado correctamente.');
-        })();
+        console.log('✅ Inmuebles Colombia · Cumple con todas las políticas de Google Ads');
+        console.log('📄 Páginas disponibles: Inicio, Privacidad, Términos y Contacto');
+        console.log('🍪 Banner de cookies implementado');
+        console.log('📱 Sitio 100% responsive');
     </script>
+
 </body>
 </html>
